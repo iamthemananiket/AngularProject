@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="mapsApp">
+
+<head>
+    <script src="./Scripts/angular.min.js"></script>
+    <!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAQ9k-BNasSE8ZfINOaRiCm7sBrq2llER4&extension=.js"></script>-->
+    <script src="./appAlternative.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Scripts/bootstrap.min.css">
+    <!-- drawer.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.1.0/css/drawer.min.css">
+    <!-- jquery & iScroll -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.3/iscroll.min.js"></script>
+    <!-- drawer.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.1.0/js/drawer.min.js"></script>
+
+
+    <body ng-controller="MapCtrl">
+        <ul class="navigation">
+            <li class="nav-item">
+                <h3>Diseases</h3></li>
+            <li class="nav-item" id="class" ng-repeat="d in diseaseNames">
+                <label>
+                    <input type="checkbox" text="d" ng-model="entity.isChecked" ng-change="addMarker($event, d, entity.isChecked)"></input> {{d}}</label>
+                <!--<a>{{marker.title}}</a>-->
+                
+                <li class="nav-item" ng-hide="hidden">
+                    <hr size=2>
+                    <h3 id="selectedHeading">Visualizng the following diseases</h3></li>
+                <li class="nav-item" ng-repeat="name in diseaseList">
+                    <span> {{ name }}</span>
+                </li>
+            </li>
+
+        </ul>
+
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger"></label>
+
+
+
+
+        <div class="site-wrap">
+
+            <div id="map"></div>
+        </div>
+    </body>
+
+</html>

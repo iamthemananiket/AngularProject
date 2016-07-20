@@ -1,0 +1,22 @@
+{
+    "disease1": {
+        "place1": {
+            "lat": 123,
+            "lon": 123
+        },
+        "place2": {
+            "lat": 321,
+            "lon": 321
+        }
+    },
+    "disease2": {
+        "place1": {
+            "lat": 123,
+            "lon": 123
+        },
+        "place2": {
+            "lat": 321,
+            "lon": 321
+        }
+    }
+}
